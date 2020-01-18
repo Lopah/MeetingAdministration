@@ -9,4 +9,13 @@
     <Folder Include="Common\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MeetingAdministration.Core\MeetingAdministration.Core.csproj" />
+  </ItemGroup>
+
 </Project>

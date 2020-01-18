@@ -18,15 +18,13 @@ namespace MeetingAdministration.Data.Configurations
 
             builder.Property(x => x.Name)
                 .IsRequired()
-                .HasAnnotation("MinLength", new { Length = 2, ErrorMessage = $"The name of the room has to have atleast 2 characters." })
                 .HasMaxLength(100);
 
             builder.Property(x => x.Code)
-                .HasAnnotation("MinLength", new { Length = 5, ErrorMessage = $"The code of the room has to have atleast 5 characters." })
+                .IsRequired()
                 .HasMaxLength(50);
 
             builder.Property(x => x.Description)
-                .HasAnnotation("MinLength", new { Length = 10, ErrorMessage = $"The description of the room has to have atleast 10 characters." })
                 .HasMaxLength(300);
         }
     }
