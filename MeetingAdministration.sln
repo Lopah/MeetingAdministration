@@ -7,10 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingAdministration.App",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingAdministration.Core", "src\MeetingAdministration.Core\MeetingAdministration.Core.csproj", "{1DFF9316-BE64-4C8A-AFCD-E24F72435AD9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{740ECDF0-BFCC-4774-8E82-C637C7AB0353}"
-	ProjectSection(SolutionItems) = preProject
-		src\MeetingAdministration.Data\MeetingAdministration.Data.csproj = src\MeetingAdministration.Data\MeetingAdministration.Data.csproj
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingAdministration.Data", "src\MeetingAdministration.Data\MeetingAdministration.Data.csproj", "{4F39CDEF-A5F4-4DF9-8486-C8A759AF0087}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +23,10 @@ Global
 		{1DFF9316-BE64-4C8A-AFCD-E24F72435AD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DFF9316-BE64-4C8A-AFCD-E24F72435AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DFF9316-BE64-4C8A-AFCD-E24F72435AD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F39CDEF-A5F4-4DF9-8486-C8A759AF0087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F39CDEF-A5F4-4DF9-8486-C8A759AF0087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F39CDEF-A5F4-4DF9-8486-C8A759AF0087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F39CDEF-A5F4-4DF9-8486-C8A759AF0087}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
