@@ -1,0 +1,17 @@
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\bin\Debug\netcoreapp3.1\MeetingAdministrator.App.exe
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\bin\Debug\netcoreapp3.1\MeetingAdministrator.App.deps.json
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\bin\Debug\netcoreapp3.1\MeetingAdministrator.App.runtimeconfig.json
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\bin\Debug\netcoreapp3.1\MeetingAdministrator.App.runtimeconfig.dev.json
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\bin\Debug\netcoreapp3.1\MeetingAdministrator.App.dll
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\bin\Debug\netcoreapp3.1\MeetingAdministrator.App.pdb
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\obj\Debug\netcoreapp3.1\MeetingAdministrator.App.csprojAssemblyReference.cache
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\obj\Debug\netcoreapp3.1\MeetingAdministrator.App_MarkupCompile.cache
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\obj\Debug\netcoreapp3.1\MeetingAdministrator.App_MarkupCompile.lref
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\obj\Debug\netcoreapp3.1\MeetingAdministrator.App.g.resources
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\obj\Debug\netcoreapp3.1\MeetingAdministrator.App.AssemblyInfoInputs.cache
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\obj\Debug\netcoreapp3.1\MeetingAdministrator.App.AssemblyInfo.cs
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\obj\Debug\netcoreapp3.1\MeetingAdministrator.App.dll
+C:\Repository\MeetingAdministration\MeetingAdministrator.App\obj\Debug\netcoreapp3.1\MeetingAdministrator.App.pdb

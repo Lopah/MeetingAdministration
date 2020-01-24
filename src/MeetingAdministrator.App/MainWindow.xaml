@@ -1,0 +1,167 @@
+﻿<Window x:Class="MeetingAdministrator.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MeetingAdministrator.App"
+        mc:Ignorable="d"
+        Title="EBC Meeting Rooms Manager" Width="1200" Height="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="4*" />
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Menu Height="20" VerticalAlignment="Center" Grid.ColumnSpan="4" >
+            <MenuItem Header="_File">
+                <MenuItem Header="_Import Data">
+                    <MenuItem.ToolTip>
+                        <ToolTip>Import data in TODO format.</ToolTip>
+                    </MenuItem.ToolTip>
+                </MenuItem>
+                <MenuItem Header="_Save">
+                    <MenuItem.ToolTip>
+                        <ToolTip>
+                            Save data in TODO format.
+                        </ToolTip>
+                    </MenuItem.ToolTip>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="_Exit">
+                    <MenuItem.ToolTip>
+                        <ToolTip>Exits out of the application.</ToolTip>
+                    </MenuItem.ToolTip>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Label Grid.Row="1" FontSize="10" FontWeight="DemiBold" Margin="15 10 0 0">Meeting Centres</Label>
+        <ListBox Grid.Row="2" Grid.Column="0" Margin="15 5 15 0" Grid.ColumnSpan="2">
+            
+        </ListBox>
+        <Button Grid.Row="3" Grid.Column="0" Width="45" Margin="15 10 0 5" HorizontalAlignment="Left">
+            <Button.Content>
+                <TextBlock>
+                    New
+                </TextBlock>
+            </Button.Content>
+        </Button>
+        <Button Grid.Row="3" Grid.Column="0" Width="45" Margin="20 10 0 5" HorizontalAlignment="Center">
+            <Button.Content>
+                <TextBlock>
+                    Edit
+                </TextBlock>
+            </Button.Content>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="3" Width="45" Margin="0 10 20 5" HorizontalAlignment="Right">
+            <Button.Content>
+                <TextBlock>
+                    Delete
+                </TextBlock>
+            </Button.Content>
+        </Button>
+        <Label Grid.Row="1" Grid.Column="2" FontSize="10" FontWeight="DemiBold" VerticalAlignment="Bottom">Meeting Rooms</Label>
+        <ListBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="15 5 15 0">
+            
+        </ListBox>
+        <Button Grid.Column="2" Grid.Row="3" Width="45" HorizontalAlignment="Left" Margin="15 10 0 5">
+            <Button.Content>
+                <TextBlock>
+                    New
+                </TextBlock>
+            </Button.Content>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="3" Width="45" HorizontalAlignment="Center" Margin="15 10 0 5">
+            <Button.Content>
+                <TextBlock>
+                    Edit
+                </TextBlock>
+            </Button.Content>
+        </Button>
+        <Button Grid.Column="3" Grid.Row="3" Width="45" HorizontalAlignment="Right" Margin="0 10 15 5">
+            <Button.Content>
+                <TextBlock>
+                    Delete
+                </TextBlock>
+            </Button.Content>
+        </Button>
+        <Grid Grid.Row="4" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0">Meeting Centre Details</Label>
+            <Label FontSize="10" Grid.Row="1">
+                <Label.Content>
+                    <TextBlock ClipToBounds="True">Name</TextBlock>
+                </Label.Content></Label>
+            <TextBox Grid.Row="2"></TextBox>
+            <Label Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Label.Content>
+                    <TextBlock>
+                        Code
+                    </TextBlock>
+                </Label.Content>
+            </Label>
+            <TextBlock Grid.Row="4"></TextBlock>
+            <Label Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center">Description</Label>
+            <TextBlock Grid.Row="6"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" MaxHeight="10"/>
+                <RowDefinition Height="*" MaxHeight="30"/>
+                <RowDefinition Height="*" MaxHeight="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0">Meeting Room Details</Label>
+            <Label FontSize="10" Grid.Row="1">
+                <Label.Content>
+                    <TextBlock >Name</TextBlock>
+                </Label.Content>
+            </Label>
+            <TextBox Grid.Row="2"></TextBox>
+            <Label Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Label.Content>
+                    <TextBlock>
+                        Code
+                    </TextBlock>
+                </Label.Content>
+            </Label>
+            <TextBlock Grid.Row="4"></TextBlock>
+            <Label Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center">Description</Label>
+            <TextBlock Grid.Row="6"></TextBlock>
+            <Label Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center">Capacity</Label>
+            <TextBlock Grid.Row="7"></TextBlock>
+            <CheckBox Grid.Row="8" IsChecked="False" HorizontalAlignment="Left"/>
+            <Label Grid.Row="8" Content="Video Conference"/>
+        </Grid>
+    </Grid>
+</Window>

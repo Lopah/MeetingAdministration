@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingAdministration.Core"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingAdministration.Data", "src\MeetingAdministration.Data\MeetingAdministration.Data.csproj", "{4F39CDEF-A5F4-4DF9-8486-C8A759AF0087}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingAdministrator.App", "src\MeetingAdministrator.App\MeetingAdministrator.App.csproj", "{838B5951-C2BB-418B-8FED-AEDA2FD1A9D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4F39CDEF-A5F4-4DF9-8486-C8A759AF0087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F39CDEF-A5F4-4DF9-8486-C8A759AF0087}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F39CDEF-A5F4-4DF9-8486-C8A759AF0087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{838B5951-C2BB-418B-8FED-AEDA2FD1A9D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{838B5951-C2BB-418B-8FED-AEDA2FD1A9D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{838B5951-C2BB-418B-8FED-AEDA2FD1A9D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{838B5951-C2BB-418B-8FED-AEDA2FD1A9D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

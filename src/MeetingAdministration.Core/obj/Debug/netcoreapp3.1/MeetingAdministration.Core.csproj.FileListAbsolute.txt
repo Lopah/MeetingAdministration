@@ -1,0 +1,8 @@
+C:\Repository\MeetingAdministration\src\MeetingAdministration.Core\bin\Debug\netcoreapp3.1\MeetingAdministration.Core.deps.json
+C:\Repository\MeetingAdministration\src\MeetingAdministration.Core\bin\Debug\netcoreapp3.1\MeetingAdministration.Core.dll
+C:\Repository\MeetingAdministration\src\MeetingAdministration.Core\bin\Debug\netcoreapp3.1\MeetingAdministration.Core.pdb
+C:\Repository\MeetingAdministration\src\MeetingAdministration.Core\obj\Debug\netcoreapp3.1\MeetingAdministration.Core.csprojAssemblyReference.cache
+C:\Repository\MeetingAdministration\src\MeetingAdministration.Core\obj\Debug\netcoreapp3.1\MeetingAdministration.Core.AssemblyInfoInputs.cache
+C:\Repository\MeetingAdministration\src\MeetingAdministration.Core\obj\Debug\netcoreapp3.1\MeetingAdministration.Core.AssemblyInfo.cs
+C:\Repository\MeetingAdministration\src\MeetingAdministration.Core\obj\Debug\netcoreapp3.1\MeetingAdministration.Core.dll
+C:\Repository\MeetingAdministration\src\MeetingAdministration.Core\obj\Debug\netcoreapp3.1\MeetingAdministration.Core.pdb
