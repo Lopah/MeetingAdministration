@@ -3,9 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MeetingAdministrator.App"
+        xmlns:viewmodels="clr-namespace:MeetingAdministrator.App.ViewModels"
         mc:Ignorable="d"
         Title="EBC Meeting Rooms Manager" Width="1200" Height="600">
+    <Window.Resources>
+        <viewmodels:MeetingCentreViewModel x:Key="MeetingCentre" />
+        <viewmodels:MeetingRoomViewModel x:Key="MeetingRoom" />
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
