@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MeetingAdministration.Data.Entities
+﻿namespace MeetingAdministration.Data.Entities
 {
     public class MeetingRoom
     {
@@ -31,5 +27,7 @@ namespace MeetingAdministration.Data.Entities
         public bool IsVideoConference { get; set; }
 
         public MeetingCentre MeetingCentre { get; set; }
+
+        public MeetingsPlanning MeetingsPlanning { get; set; }
     }
 }

@@ -1,11 +1,6 @@
 ﻿using MeetingAdministration.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MeetingAdministration.Data.Configurations
 {
@@ -26,6 +21,8 @@ namespace MeetingAdministration.Data.Configurations
 
             builder.Property(x => x.Description)
                 .HasMaxLength(300);
+
+            builder.HasMany(r => r.MeetingRooms).WithOne(r => r.MeetingCentre);
         }
     }
 }

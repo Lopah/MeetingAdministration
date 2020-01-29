@@ -1,7 +1,6 @@
 ﻿using MeetingAdministration.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.ComponentModel.DataAnnotations;
 
 namespace MeetingAdministration.Data.Configurations
 {
@@ -24,6 +23,8 @@ namespace MeetingAdministration.Data.Configurations
 
             builder.Property(x => x.Capacity)
                 .HasMaxLength(100);
+
+            builder.HasOne(e => e.MeetingCentre).WithMany(r => r.MeetingRooms);
         }
     }
 }
