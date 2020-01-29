@@ -20,8 +20,7 @@ namespace MeetingAdministration.Data.Configurations
                 .IsRequired();
 
             builder.Property(e => e.Min)
-                .IsRequired()
-                .HasDefaultValue(0);
+                .IsRequired();
 
             builder.HasOne(e => e.Category).WithMany(r => r.Accessories);
         }
