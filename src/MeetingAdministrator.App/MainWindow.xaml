@@ -3,17 +3,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MeetingAdministrator.App"
+        xmlns:viewmodels="clr-namespace:MeetingAdministrator.App.ViewModels"
+        xmlns:tabmodels="clr-namespace:MeetingAdministrator.App.ViewModels.TabControls.Tabs"
+        xmlns:tab="clr-namespace:MeetingAdministrator.App.ViewModels.TabControls"
         mc:Ignorable="d"
-        Title="EBC Meeting Rooms Manager" Width="1200" Height="600">
+        Title="EBC Meeting Rooms Manager" MinWidth="1200" MinHeight="800">
+    <Window.Resources>
+        <viewmodels:MeetingCentreViewModel x:Key="MeetingCentre" />
+        <viewmodels:MeetingRoomViewModel x:Key="MeetingRoom" />
+        <DataTemplate DataType="{x:Type tabmodels:MeetingsCentresAndRoomsViewModel}">
+            
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type tabmodels:MeetingsPlanningViewModel}">
+            
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type tabmodels:AccessoriesViewModel}">
+            
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="4*" />
-            
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="*" />
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -36,103 +53,112 @@
                     </MenuItem.ToolTip>
                 </MenuItem>
                 <Separator />
-                <MenuItem Header="_Exit">
+                <MenuItem Header="_Exit" 
+                          Command="{Binding Path=CloseCommand}">
                     <MenuItem.ToolTip>
                         <ToolTip>Exits out of the application.</ToolTip>
                     </MenuItem.ToolTip>
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <Label Grid.Row="1" FontSize="10" FontWeight="DemiBold" Margin="15 10 0 0">Meeting Centres</Label>
-        <ListBox Grid.Row="2" Grid.Column="0" Margin="15 5 15 0" Grid.ColumnSpan="2">
-            
+        <TabControl Grid.Row="1" ItemsSource="{Binding TabCollection}" SelectedIndex="{Binding SelectedIndex}" Grid.ColumnSpan="4"></TabControl>
+        <Label Grid.Row="2" FontSize="10" FontWeight="DemiBold" Margin="15 10 0 0" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+               >Meeting Centres</Label>
+        <ListBox Grid.Row="3" Grid.Column="0" Margin="15 5 15 0" Grid.ColumnSpan="2" DataContext="{Binding Source={StaticResource MeetingCentre}}">
+            <!--TODO: Bind MeetingCentre Context here--> 
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="WTF"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
-        <Button Grid.Row="3" Grid.Column="0" Width="45" Margin="15 10 0 5" HorizontalAlignment="Left">
+        <Button Grid.Row="4" Grid.Column="0" Width="45" Margin="15 10 0 5" HorizontalAlignment="Left">
             <Button.Content>
                 <TextBlock>
                     New
                 </TextBlock>
             </Button.Content>
         </Button>
-        <Button Grid.Row="3" Grid.Column="0" Width="45" Margin="20 10 0 5" HorizontalAlignment="Center">
+        <Button Grid.Row="4" Grid.Column="0" Width="45" Margin="20 10 0 5" HorizontalAlignment="Center">
             <Button.Content>
                 <TextBlock>
                     Edit
                 </TextBlock>
             </Button.Content>
         </Button>
-        <Button Grid.Column="1" Grid.Row="3" Width="45" Margin="0 10 20 5" HorizontalAlignment="Right">
+        <Button Grid.Row="4" Grid.Column="1" Width="45" Margin="0 10 20 5" HorizontalAlignment="Right">
             <Button.Content>
                 <TextBlock>
                     Delete
                 </TextBlock>
             </Button.Content>
         </Button>
-        <Label Grid.Row="1" Grid.Column="2" FontSize="10" FontWeight="DemiBold" VerticalAlignment="Bottom">Meeting Rooms</Label>
-        <ListBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Margin="15 5 15 0">
+        <Label Grid.Row="2" Grid.Column="2" FontSize="10" FontWeight="DemiBold" VerticalAlignment="Bottom" HorizontalAlignment="Left">Meeting Rooms</Label>
+        <ListBox Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Margin="15 5 15 0" DataContext="{Binding Source={StaticResource MeetingRoom}}">
+            <!--TODO: Bind Meeting room context here-->
+            
             
         </ListBox>
-        <Button Grid.Column="2" Grid.Row="3" Width="45" HorizontalAlignment="Left" Margin="15 10 0 5">
+        <Button Grid.Row="4" Grid.Column="2" Width="45" HorizontalAlignment="Left" Margin="15 10 0 5">
             <Button.Content>
                 <TextBlock>
                     New
                 </TextBlock>
             </Button.Content>
         </Button>
-        <Button Grid.Column="2" Grid.Row="3" Width="45" HorizontalAlignment="Center" Margin="15 10 0 5">
+        <Button Grid.Row="4" Grid.Column="2" Width="45" HorizontalAlignment="Center" Margin="15 10 0 5">
             <Button.Content>
                 <TextBlock>
                     Edit
                 </TextBlock>
             </Button.Content>
         </Button>
-        <Button Grid.Column="3" Grid.Row="3" Width="45" HorizontalAlignment="Right" Margin="0 10 15 5">
+        <Button Grid.Row="4" Grid.Column="3" Width="45" HorizontalAlignment="Right" Margin="0 10 15 5">
             <Button.Content>
                 <TextBlock>
                     Delete
                 </TextBlock>
             </Button.Content>
         </Button>
-        <Grid Grid.Row="4" Grid.ColumnSpan="2">
+        <Grid Margin="15 0 0 0" Grid.Row="5" Grid.ColumnSpan="2" DataContext="{Binding Source={StaticResource MeetingCentre}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="3*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0">Meeting Centre Details</Label>
-            <Label FontSize="10" Grid.Row="1">
-                <Label.Content>
-                    <TextBlock ClipToBounds="True">Name</TextBlock>
-                </Label.Content></Label>
-            <TextBox Grid.Row="2"></TextBox>
-            <Label Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">
-                <Label.Content>
-                    <TextBlock>
-                        Code
-                    </TextBlock>
-                </Label.Content>
-            </Label>
-            <TextBlock Grid.Row="4"></TextBlock>
-            <Label Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center">Description</Label>
-            <TextBlock Grid.Row="6"></TextBlock>
+            <TextBlock Grid.Row="1" Text="Name" VerticalAlignment="Bottom" />
+            <TextBox Grid.Row="2" Text="{Binding MeetingCentre.Name}" />
+            <TextBlock Grid.Row="3" Text="Code" VerticalAlignment="Bottom" />
+            <TextBox Grid.Row="4" Text="{Binding MeetingCentre.Code}" />
+            <TextBlock Grid.Row="5" Text="Description" VerticalAlignment="Bottom" />
+            <TextBox Grid.Row="6" Text="{Binding MeetingCentre.Description}" />
         </Grid>
-        <Grid Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="2">
+        <Grid Margin="15 0 0 0" Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="2" DataContext="{Binding Source={StaticResource MeetingRoom}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*" MaxHeight="10"/>
-                <RowDefinition Height="*" MaxHeight="30"/>
-                <RowDefinition Height="*" MaxHeight="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -141,27 +167,17 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0">Meeting Room Details</Label>
-            <Label FontSize="10" Grid.Row="1">
-                <Label.Content>
-                    <TextBlock >Name</TextBlock>
-                </Label.Content>
-            </Label>
-            <TextBox Grid.Row="2"></TextBox>
-            <Label Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center">
-                <Label.Content>
-                    <TextBlock>
-                        Code
-                    </TextBlock>
-                </Label.Content>
-            </Label>
-            <TextBlock Grid.Row="4"></TextBlock>
-            <Label Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center">Description</Label>
-            <TextBlock Grid.Row="6"></TextBlock>
-            <Label Grid.Row="7" HorizontalAlignment="Left" VerticalAlignment="Center">Capacity</Label>
-            <TextBlock Grid.Row="7"></TextBlock>
-            <CheckBox Grid.Row="8" IsChecked="False" HorizontalAlignment="Left"/>
-            <Label Grid.Row="8" Content="Video Conference"/>
+            <Label Grid.Row="0" HorizontalAlignment="Left">Meeting Room Details</Label>
+            <TextBlock Grid.Row="1" Text="Name" VerticalAlignment="Bottom" />
+            <TextBox Grid.Row="2" Text="{Binding MeetingRoom.Name, Mode=TwoWay}"/>
+            <TextBlock Grid.Row="3" Text="Code" VerticalAlignment="Bottom" />
+            <TextBox Grid.Row="4" Text="{Binding MeetingRoom.Code, Mode=TwoWay}"/>
+            <TextBlock Grid.Row="5" Text="Description" VerticalAlignment="Bottom" />
+            <TextBox Grid.Row="6" Text="{Binding MeetingRoom.Description, Mode=TwoWay}" />
+            <TextBlock Grid.Row="7" Text="Capacity" VerticalAlignment="Bottom" />
+            <TextBox Grid.Row="8" Text="{Binding MeetingRoom.Capacity,Mode=TwoWay}" />
+            <CheckBox Grid.Row="9" IsChecked="{Binding MeetingRoom.IsVideoConference, Mode=TwoWay}" HorizontalAlignment="Left"/>
+            <TextBlock Grid.Row="9" Text="Video Conference" Margin="20 0 0 0"/>
         </Grid>
     </Grid>
 </Window>

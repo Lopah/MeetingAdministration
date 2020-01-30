@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="MeetingAdministrator.App.Views.Lists.MeetingCentresListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MeetingAdministrator.App.Views.Lists"
+             xmlns:viewdetail="clr-namespace:MeetingAdministrator.App.Views.Details"
+             xmlns:vms="clr-namespace:MeetingAdmin"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type viewdetail:MeetingCentresDetailView}">
+            
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="8*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="{Binding Title}" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="13" MinHeight="25"/>
+        <ListBox Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding ListItems, Mode=OneWay}">
+            <!--FIXME: Add binding properly (Maybe use data template-->
+            <!-- TODO: Possible Item template definition here.-->
+        </ListBox>
+        <Button Grid.Row="2" Grid.Column="0" Content="New" Command="{Binding NewCommand}" HorizontalAlignment="Left" MinWidth="50"></Button>
+        <Button Grid.Row="2" Grid.Column="1" Content="Edit" Command="{Binding EditCommand}" HorizontalAlignment="Left" MinWidth="50"></Button>
+        <Button Grid.Row="2" Grid.Column="3" Content="Delete" Command="{Binding DeleteCommand}" HorizontalAlignment="Left" MinWidth="50"></Button>
+        
+        
+    </Grid>
+</UserControl>
