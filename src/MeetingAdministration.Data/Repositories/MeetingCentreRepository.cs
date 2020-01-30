@@ -3,7 +3,6 @@ using MeetingAdministration.Core.Models;
 using MeetingAdministration.Core.Repositories;
 using MeetingAdministration.Data.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,6 +37,16 @@ namespace MeetingAdministration.Data.Repositories
             await _context.SaveChangesAsync();
 
             return entity;
+        }
+
+        public Task<MeetingCentreModel> EditMeetingCentreByIdAsync(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<MeetingCentreModel> EditMeetingCentreByModelAsync(MeetingCentreModel model)
+        {
+            throw new System.NotImplementedException();
         }
 
         public async Task<IList<MeetingCentreModel>> GetAllAsync()

@@ -53,7 +53,8 @@
                     </MenuItem.ToolTip>
                 </MenuItem>
                 <Separator />
-                <MenuItem Header="_Exit">
+                <MenuItem Header="_Exit" 
+                          Command="{Binding Path=CloseCommand}">
                     <MenuItem.ToolTip>
                         <ToolTip>Exits out of the application.</ToolTip>
                     </MenuItem.ToolTip>

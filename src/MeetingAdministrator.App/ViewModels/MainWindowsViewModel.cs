@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeetingAdministrator.App.Views.Tabs
+namespace MeetingAdministrator.App.ViewModels
 {
-    public class MeetingsCentresAndRoomsView
+    public class MainWindowsViewModel : ViewModelBase
     {
         
     }

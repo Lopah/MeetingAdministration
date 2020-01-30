@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Input;
 
 namespace MeetingAdministrator.App.Commands
@@ -24,6 +25,7 @@ namespace MeetingAdministrator.App.Commands
             _execute = execute ?? throw new ArgumentNullException(execute.GetType().Name);
             _canExecute = canExecute;
         }
+        [DebuggerStepThrough]
         public bool CanExecute(object parameter)
         {
             return _canExecute == null ? true : _canExecute(parameter);
