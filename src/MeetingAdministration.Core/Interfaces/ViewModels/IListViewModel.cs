@@ -5,7 +5,7 @@ namespace MeetingAdministration.Core.Interfaces.ViewModels
 {
     public interface IListViewModel<T> where T : class
     {
-        public int? SelectedItemIndex { get; set; }
+        public int SelectedItemIndex { get; set; }
 
         public string Title { get;}
 

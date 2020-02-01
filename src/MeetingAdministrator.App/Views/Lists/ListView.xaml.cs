@@ -16,9 +16,9 @@ namespace MeetingAdministrator.App.Views.Lists
     /// <summary>
     /// Interaction logic for MeetingCentresListView.xaml
     /// </summary>
-    public partial class MeetingCentresListView : UserControl
+    public partial class ListView : UserControl
     {
-        public MeetingCentresListView()
+        public ListView()
         {
             InitializeComponent();
         }

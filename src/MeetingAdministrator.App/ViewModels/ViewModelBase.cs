@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.Windows.Controls;
 
 namespace MeetingAdministrator.App.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
         public string DisplayName { get; set; }
+
+        public Control View { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

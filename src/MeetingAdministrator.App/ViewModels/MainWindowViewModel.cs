@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MeetingAdministrator.App.ViewModels
 {
-    public class MainWindowsViewModel : ViewModelBase
+    public class MainWindowViewModel : ViewModelBase
     {
         
     }

@@ -10,4 +10,8 @@
     <ProjectReference Include="..\MeetingAdministration.Data\MeetingAdministration.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Windows\EditEntities\" />
+  </ItemGroup>
+
 </Project>

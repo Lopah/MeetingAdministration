@@ -1,25 +1,23 @@
 ﻿using MeetingAdministration.Core.Interfaces.ViewModels;
+using MeetingAdministration.Core.Models;
 using MeetingAdministration.Data.Entities;
 using MeetingAdministrator.App.Commands;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
-namespace MeetingAdministrator.App.ViewModels.TabControls.Lists
+namespace MeetingAdministrator.App.ViewModels.Lists
 {
-	public class MeetingCentresListViewModel : ViewModelBase, IListViewModel<MeetingCentre>
+	public class MeetingCentresListViewModel : ViewModelBase, IListViewModel<MeetingCentreModel>
     {
-		public MeetingCentresListViewModel(string title)
-		{
-			this.Title = title;
-		}
-		private int? _selectedItemIndex;
-		private ObservableCollection<MeetingCentre> _meetingCentres;
+		private int _selectedItemIndex = -1;
+		private ObservableCollection<MeetingCentreModel> _meetingCentres;
 		private ICommand _newCommand;
 		private ICommand _editCommand;
 		private ICommand _deleteCommand;
+		private MeetingCentreModel _selectedItem;
 
-		public int? SelectedItemIndex
+		public int SelectedItemIndex
 		{
 			get { return _selectedItemIndex; }
 			set
@@ -32,8 +30,40 @@ namespace MeetingAdministrator.App.ViewModels.TabControls.Lists
 			}
 		}
 
-		public string Title { get;}
-		public ObservableCollection<MeetingCentre> ListItems
+		public MeetingCentresListViewModel()
+		{
+			ListItems = new ObservableCollection<MeetingCentreModel>()
+			{
+				new MeetingCentreModel()
+				{
+					Code = "123",
+					Description = "Fuck you",
+					Name = "Bitch"
+				}
+
+			};
+
+		}
+		public MeetingCentreModel SelectedItem
+		{
+			get
+			{
+				return _selectedItem;
+			}
+			set
+			{
+				if (value != _selectedItem)
+				{
+					_selectedItem = value;
+					NotifyPropertyChanged(_selectedItemIndex.GetType().Name);
+				}
+			}
+		}
+
+
+		public string Title => this.GetType().Name.Remove(this.GetType().Name.Length - 9);
+
+		public ObservableCollection<MeetingCentreModel> ListItems
 		{
 			get
 			{
@@ -98,9 +128,9 @@ namespace MeetingAdministrator.App.ViewModels.TabControls.Lists
 
 		private void Delete()
 		{
-			if (_selectedItemIndex.HasValue)
+			if (_selectedItemIndex >= 0)
 			{
-				this.ListItems.RemoveAt(SelectedItemIndex.Value);
+				this.ListItems.RemoveAt(SelectedItemIndex);
 			}
 			else
 				throw new ArgumentNullException("SelectedItemIndex");

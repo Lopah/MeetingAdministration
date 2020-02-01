@@ -14,19 +14,5 @@ namespace MeetingAdministrator.App
     /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            base.OnStartup(e);
-            MainWindow window = new MainWindow();
-
-            // string path could be added here to point to a db file.
-
-            var viewModel = new MainWindowsViewModel();
-
-            // Request close here
-
-            window.DataContext = viewModel;
-            window.Show();
-        }
     }
 }

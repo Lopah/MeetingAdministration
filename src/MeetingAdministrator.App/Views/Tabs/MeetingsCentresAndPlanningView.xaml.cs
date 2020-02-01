@@ -16,9 +16,9 @@ namespace MeetingAdministrator.App.Views.Tabs
     /// <summary>
     /// Interaction logic for MeetingsAndPlanningView.xaml
     /// </summary>
-    public partial class MeetingsAndPlanningView : UserControl
+    public partial class MeetingCentresAndPlanningView : UserControl
     {
-        public MeetingsAndPlanningView()
+        public MeetingCentresAndPlanningView()
         {
             InitializeComponent();
         }
