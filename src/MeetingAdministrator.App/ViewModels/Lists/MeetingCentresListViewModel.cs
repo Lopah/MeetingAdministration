@@ -26,7 +26,7 @@ namespace MeetingAdministrator.App.ViewModels.Lists
 				if (value != _selectedItemIndex)
 				{
 					_selectedItemIndex = value;
-					NotifyPropertyChanged(_selectedItemIndex.GetType().Name);
+					NotifyPropertyChanged(SelectedItemIndex.GetType().Name);
 				}
 			}
 		}
@@ -39,11 +39,20 @@ namespace MeetingAdministrator.App.ViewModels.Lists
 				{
 					Code = "123",
 					Description = "Fuck you",
-					Name = "Bitch"
+					Name = "Bitch",
+					MeetingRooms = new ObservableCollection<MeetingRoomModel>()
+					{
+						new MeetingRoomModel()
+						{
+							Capacity = 1,
+							Description = "TEST",
+							Code = "1234",
+							Name = "Kokot"
+						}
+					}
 				}
 
 			};
-
 		}
 		public MeetingCentreModel SelectedItem
 		{
@@ -56,7 +65,7 @@ namespace MeetingAdministrator.App.ViewModels.Lists
 				if (value != _selectedItem)
 				{
 					_selectedItem = value;
-					NotifyPropertyChanged(_selectedItemIndex.GetType().Name);
+					NotifyPropertyChanged(typeof(MeetingCentreModel).Name);
 				}
 			}
 		}
@@ -75,7 +84,7 @@ namespace MeetingAdministrator.App.ViewModels.Lists
 				if (value != _meetingCentres)
 				{
 					_meetingCentres = value;
-					NotifyPropertyChanged(typeof(ObservableCollection<MeetingCentre>).Name);
+					NotifyPropertyChanged(typeof(ObservableCollection<MeetingCentreModel>).Name);
 				}
 			}
 		}

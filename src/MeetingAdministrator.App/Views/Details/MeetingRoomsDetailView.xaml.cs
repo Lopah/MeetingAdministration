@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MeetingAdministration.Core.Models;
+using MeetingAdministrator.App.ViewModels.Details;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +20,23 @@ namespace MeetingAdministrator.App.Views.Details
     /// </summary>
     public partial class MeetingRoomsDetailView : UserControl
     {
+        private MeetingRoomModel _model;
         public MeetingRoomsDetailView()
         {
             InitializeComponent();
+        }
+
+        private void StackPanel_Loaded(object sender, RoutedEventArgs e)
+        {
+            var context = this.DataContext as MeetingRoomDetailViewModel;
+            _model = context.MeetingRoom;
+            ContentPanel.DataContext = _model;
+            context.PropertyChanged += Context_PropertyChanged;
+        }
+
+        private void Context_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            ContentPanel.DataContext = (sender as MeetingRoomDetailViewModel).MeetingRoom;
         }
     }
 }

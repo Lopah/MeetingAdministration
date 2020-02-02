@@ -23,16 +23,18 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Content="{Binding Title}" MinHeight="25" FontSize="13" VerticalAlignment="Bottom" HorizontalAlignment="Left"></Label>
-        <Label Grid.Row="1" Content="Name" MinHeight="15" FontSize="10"></Label>
-        <TextBox Grid.Row="2" DataContext="{Binding Path=Name}" />
-        <Label Grid.Row="3" Content="Code" MinHeight="25" FontSize="10"></Label>
-        <TextBox Grid.Row="4" DataContext="{Binding Path=Code}" />
-        <Label Grid.Row="5" Content="Description" MinHeight="25" FontSize="10"></Label>
-        <TextBox Grid.Row="6" DataContext="{Binding Path=Description}" />
-        <Label Grid.Row="7" Content="Capacity" MinHeight="25" FontSize="10"></Label>
-        <TextBox Grid.Row="8" Text="{Binding MeetingRoom.Capacity,Mode=OneWay}" IsReadOnly="True"/>
-        <CheckBox Grid.Row="9" IsChecked="{Binding MeetingRoom.IsVideoConference, Mode=OneWay}" HorizontalAlignment="Left" IsHitTestVisible="False" />
-        <TextBlock Grid.Row="9" Text="Video Conference" Margin="20 0 0 0"/>
+        <Label Grid.Row="0" Content="{Binding Title, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" MinHeight="25" FontSize="13" VerticalAlignment="Bottom" HorizontalAlignment="Left"></Label>
+        <StackPanel Grid.Row="1" Orientation="Vertical" DataContext="{Binding MeetingRoom, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Loaded="StackPanel_Loaded" x:Name="ContentPanel">
+            <Label Grid.Row="1" Content="Name" MinHeight="15" FontSize="10"></Label>
+            <TextBox Grid.Row="2" Text="{Binding Name}" IsReadOnly="True"/>
+            <Label Grid.Row="3" Content="Code" MinHeight="25" FontSize="10"></Label>
+            <TextBox Grid.Row="4" Text="{Binding Code}" IsReadOnly="True"/>
+            <Label Grid.Row="5" Content="Description" MinHeight="25" FontSize="10"></Label>
+            <TextBox Grid.Row="6" Text="{Binding Description}" IsReadOnly="True"/>
+            <Label Grid.Row="7" Content="Capacity" MinHeight="25" FontSize="10"></Label>
+            <TextBox Grid.Row="8" Text="{Binding Capacity,Mode=OneWay}" IsReadOnly="True"/>
+            <CheckBox Grid.Row="9" IsChecked="{Binding IsVideoConference, Mode=OneWay}" HorizontalAlignment="Left" IsHitTestVisible="False" />
+            <TextBlock Grid.Row="9" Text="Video Conference" Margin="20 0 0 0"/>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MeetingAdministration.Core.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MeetingAdministration.Core.Models
 {
-    public class MeetingsPlanningModel
+    public class MeetingsPlanningModel : ModelBase
     {
         private const string _message = "The {0} needs to be atleast {1} characters long.";
 

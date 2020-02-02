@@ -33,15 +33,9 @@ namespace MeetingAdministrator.App.ViewModels.Details
 
         private void ListViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == _meetingCentresListViewModel.SelectedItemIndex.GetType().Name)
-            {
                 if (_meetingCentresListViewModel.SelectedItemIndex >= 0)
-                {
-                    this._meetingCentre = _meetingCentresListViewModel.ListItems[_meetingCentresListViewModel.SelectedItemIndex];
-                }
-                else
-                    throw new ArgumentNullException(_meetingCentresListViewModel.SelectedItemIndex.GetType().Name);
-            }
+                    MeetingCentre = _meetingCentresListViewModel.ListItems[_meetingCentresListViewModel.SelectedItemIndex];
+            
         }
     }
 }

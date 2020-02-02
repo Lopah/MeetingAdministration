@@ -17,13 +17,18 @@ namespace MeetingAdministrator.App.ViewModels.TabControls.Tabs
         
         public MeetingsCentresAndRoomsViewModel()
         {
+            View = new MeetingCentresAndPlanningView();
+        }
+
+        public MeetingsCentresAndRoomsViewModel(object baseModel)
+        {
             MeetingCentresListViewModel = new MeetingCentresListViewModel();
-            MeetingRoomsListViewModel = new MeetingRoomsListViewModel();
+            MeetingRoomsListViewModel = new MeetingRoomsListViewModel(this.MeetingCentresListViewModel);
 
             MeetingCentreViewModel = new MeetingCentreDetailViewModel(this.MeetingCentresListViewModel);
             MeetingRoomViewModel = new MeetingRoomDetailViewModel(this.MeetingRoomsListViewModel);
 
-            View = new MeetingCentresAndPlanningView();
+            View = (Control)baseModel;
         }
 
         public MeetingCentresListViewModel MeetingCentresListViewModel
@@ -37,7 +42,7 @@ namespace MeetingAdministrator.App.ViewModels.TabControls.Tabs
                 if (value != _meetingCentresListViewModel)
                 {
                     _meetingCentresListViewModel = value;
-                    NotifyPropertyChanged(_meetingCentresListViewModel.GetType().Name);
+                    NotifyPropertyChanged(typeof(MeetingCentresListViewModel).Name);
                 }
             }
         }
@@ -53,7 +58,7 @@ namespace MeetingAdministrator.App.ViewModels.TabControls.Tabs
                 if (value != _meetingRoomsListViewModel)
                 {
                     _meetingRoomsListViewModel = value;
-                    NotifyPropertyChanged(_meetingRoomsListViewModel.GetType().Name);
+                    NotifyPropertyChanged(typeof(MeetingRoomsListViewModel).Name);
                 }
             }
         }
@@ -69,7 +74,7 @@ namespace MeetingAdministrator.App.ViewModels.TabControls.Tabs
                 if (value != _meetingRoomViewModel)
                 {
                     _meetingRoomViewModel = value;
-                    NotifyPropertyChanged(_meetingRoomViewModel.GetType().Name);
+                    NotifyPropertyChanged(typeof(MeetingRoomDetailViewModel).Name);
                 }
             }
         }
@@ -85,7 +90,7 @@ namespace MeetingAdministrator.App.ViewModels.TabControls.Tabs
                 if (value != _meetingCentreViewModel)
                 {
                     _meetingCentreViewModel = value;
-                    NotifyPropertyChanged(_meetingCentreViewModel.GetType().Name);
+                    NotifyPropertyChanged(typeof(MeetingCentreDetailViewModel).Name);
                 }
             }
         }

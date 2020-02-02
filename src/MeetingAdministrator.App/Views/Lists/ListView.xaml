@@ -19,9 +19,10 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Content="{Binding Title}" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="13" MinHeight="25"/>
-        <ListBox Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding ListItems, Mode=OneWay}">
-            <!--FIXME: Add binding properly (Maybe use data template-->
-            <!-- TODO: Possible Item template definition here.-->
+        <ListBox Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding ListItems, UpdateSourceTrigger=PropertyChanged}"
+                 SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged}"
+                 SelectedIndex="{Binding SelectedItemIndex}"
+                 x:Name="ListBox">
         </ListBox>
         <Button Grid.Row="2" Grid.Column="0" Content="New" Command="{Binding NewCommand}" HorizontalAlignment="Left" MinWidth="50"></Button>
         <Button Grid.Row="2" Grid.Column="1" Content="Edit" Command="{Binding EditCommand}" HorizontalAlignment="Left" MinWidth="50"></Button>

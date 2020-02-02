@@ -13,11 +13,11 @@ namespace MeetingAdministrator.App.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private ICommand _importCommand { get; set; }
+        private ICommand _importCommand;
 
-        private ICommand _exitCommand { get; set; }
+        private ICommand _exitCommand;
 
-        private ICommand _saveCommand { get; set; }
+        private ICommand _saveCommand;
 
         public MainWindowViewModel()
         {

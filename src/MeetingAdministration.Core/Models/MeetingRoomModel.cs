@@ -1,9 +1,10 @@
-﻿using System;
+﻿using MeetingAdministration.Core.Common;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MeetingAdministration.Core.Models
 {
-    public class MeetingRoomModel
+    public class MeetingRoomModel : ModelBase
     {
         private const string _message = "The {0} must be at least {2} and at max {1} characters long";
 
@@ -28,5 +29,13 @@ namespace MeetingAdministration.Core.Models
 
         [Required]
         public bool IsVideoConference { get; set; }
+
+        public override string ToString()
+        {
+            if (Name != null && Code != null)
+                return $"{Code} : {Name}";
+            else
+                return base.ToString();
+        }
     }
 }
