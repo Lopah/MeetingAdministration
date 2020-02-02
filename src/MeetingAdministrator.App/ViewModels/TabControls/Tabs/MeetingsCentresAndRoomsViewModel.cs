@@ -1,11 +1,67 @@
-﻿namespace MeetingAdministrator.App.ViewModels.TabControls.Tabs
-{
-    public class MeetingsCentresAndRoomsViewModel : ViewModelBase
-    {
-        private MeetingRoomViewModel _meetingRoomViewModel;
-        private MeetingCentreViewModel _meetingCentreViewModel;
+﻿using MeetingAdministrator.App.Common.Intefaces;
+using MeetingAdministrator.App.ViewModels.Details;
+using MeetingAdministrator.App.ViewModels.Lists;
+using MeetingAdministrator.App.Views.Tabs;
+using System.Windows.Controls;
 
-        public MeetingRoomViewModel MeetingRoomViewModel
+namespace MeetingAdministrator.App.ViewModels.TabControls.Tabs
+{
+    public class MeetingsCentresAndRoomsViewModel : ViewModelBase, ITabItem
+    {
+        private MeetingRoomDetailViewModel _meetingRoomViewModel;
+        private MeetingCentreDetailViewModel _meetingCentreViewModel;
+        private MeetingCentresListViewModel _meetingCentresListViewModel;
+        private MeetingRoomsListViewModel _meetingRoomsListViewModel;
+
+        public MeetingsCentresAndRoomsViewModel()
+        {
+            View = new MeetingCentresAndPlanningView();
+        }
+
+        public MeetingsCentresAndRoomsViewModel(object baseModel)
+        {
+            MeetingCentresListViewModel = new MeetingCentresListViewModel(this);
+            MeetingRoomsListViewModel = new MeetingRoomsListViewModel(this.MeetingCentresListViewModel);
+
+            MeetingCentreViewModel = new MeetingCentreDetailViewModel(this.MeetingCentresListViewModel);
+            MeetingRoomViewModel = new MeetingRoomDetailViewModel(this.MeetingRoomsListViewModel);
+
+            View = (Control)baseModel;
+        }
+
+        public MeetingCentresListViewModel MeetingCentresListViewModel
+        {
+            get
+            {
+                return _meetingCentresListViewModel;
+            }
+            set
+            {
+                if (value != _meetingCentresListViewModel)
+                {
+                    _meetingCentresListViewModel = value;
+                    NotifyPropertyChanged(typeof(MeetingCentresListViewModel).Name);
+                }
+            }
+        }
+
+        public MeetingRoomsListViewModel MeetingRoomsListViewModel
+        {
+            get
+            {
+                return _meetingRoomsListViewModel;
+            }
+            set
+            {
+                if (value != _meetingRoomsListViewModel)
+                {
+                    _meetingRoomsListViewModel = value;
+                    NotifyPropertyChanged(typeof(MeetingRoomsListViewModel).Name);
+                }
+            }
+        }
+
+        public MeetingRoomDetailViewModel MeetingRoomViewModel
         {
             get
             {
@@ -16,12 +72,12 @@
                 if (value != _meetingRoomViewModel)
                 {
                     _meetingRoomViewModel = value;
-                    NotifyPropertyChanged(_meetingRoomViewModel.GetType().Name);
+                    NotifyPropertyChanged(typeof(MeetingRoomDetailViewModel).Name);
                 }
             }
         }
 
-        public MeetingCentreViewModel MeetingCentreViewModel
+        public MeetingCentreDetailViewModel MeetingCentreViewModel
         {
             get
             {
@@ -32,11 +88,11 @@
                 if (value != _meetingCentreViewModel)
                 {
                     _meetingCentreViewModel = value;
-                    NotifyPropertyChanged(_meetingCentreViewModel.GetType().Name);
+                    NotifyPropertyChanged(typeof(MeetingCentreDetailViewModel).Name);
                 }
             }
         }
 
-
+        public new string DisplayName => this.GetType().Name.Remove(this.GetType().Name.Length - 9);
     }
 }

@@ -2,8 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:MeetingAdministrator.App"
+             xmlns:tabcontrols="clr-namespace:MeetingAdministrator.App.ViewModels.TabControls"
+             xmlns:tabviews="clr-namespace:MeetingAdministrator.App.Views.Tabs"
+             xmlns:tabmodels="clr-namespace:MeetingAdministrator.App.ViewModels.TabControls.Tabs"
+             xmlns:dbcontext="clr-namespace:MeetingAdministration.Data;assembly=MeetingAdministration.Data"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <tabcontrols:TabControlViewModel x:Key="MainTabControl" x:Name="MainTabControl" />
     </Application.Resources>
 </Application>

@@ -6,14 +6,18 @@ namespace MeetingAdministration.Data
 {
     public class MeetingDbContext : DbContext
     {
-        public MeetingDbContext(DbContextOptions<MeetingDbContext> options)
-            : base(options)
-        {
-
+        public MeetingDbContext()
+        { 
+        
         }
+
         public DbSet<MeetingCentre> MeetingCentres { get; set; }
 
         public DbSet<MeetingRoom> MeetingRooms { get; set; }
+
+        public DbSet<MeetingsPlanning> MeetingsPlannings { get; set; }
+
+        public DbSet<Accessory> Accessories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

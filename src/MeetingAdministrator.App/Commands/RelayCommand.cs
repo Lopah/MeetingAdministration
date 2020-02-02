@@ -17,7 +17,6 @@ namespace MeetingAdministrator.App.Commands
 
         public RelayCommand(Action<object> execute) : this(execute, null)
         {
-
         }
 
         public RelayCommand(Action<object> execute, Predicate<object> canExecute)
@@ -25,6 +24,7 @@ namespace MeetingAdministrator.App.Commands
             _execute = execute ?? throw new ArgumentNullException(execute.GetType().Name);
             _canExecute = canExecute;
         }
+
         [DebuggerStepThrough]
         public bool CanExecute(object parameter)
         {
