@@ -7,14 +7,14 @@ namespace MeetingAdministration.Core.Interfaces.ViewModels
     {
         public int SelectedItemIndex { get; set; }
 
-        public string Title { get;}
+        public string Title { get; }
 
         public ObservableCollection<T> ListItems { get; set; }
 
-        public ICommand NewCommand { get;}
+        public ICommand NewCommand { get; }
 
-        public ICommand EditCommand { get;}
+        public ICommand EditCommand { get; }
 
-        public ICommand DeleteCommand { get;}
+        public ICommand DeleteCommand { get; }
     }
 }

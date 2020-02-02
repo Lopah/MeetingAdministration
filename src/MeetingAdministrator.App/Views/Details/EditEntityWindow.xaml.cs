@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MeetingAdministrator.App.ViewModels.Details;
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MeetingAdministrator.App.Views.Details
 {
@@ -17,20 +9,32 @@ namespace MeetingAdministrator.App.Views.Details
     /// </summary>
     public partial class EditEntityWindow : Window
     {
+        private readonly EditEntityViewModel _viewModel;
         public EditEntityWindow()
         {
             InitializeComponent();
         }
 
-        public EditEntityWindow(object entity)
+        public EditEntityWindow(Type entityType, object entityValue)
         {
-            DataContext = entity;
             InitializeComponent();
+
+            ContentPanel.DataContext = entityValue == null ? Activator.CreateInstance(entityType) : entityValue;
+            _viewModel = new EditEntityViewModel(ContentPanel, entityType, entityValue, this);
+            this.DataContext = _viewModel;
         }
 
-        public void SetLabelAndTextBoxBasedOnProperty(object property)
+        private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            DataContext = ContentPanel.DataContext;
+            this.DialogResult = true;
+            this.Close();
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
         }
     }
 }

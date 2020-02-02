@@ -1,10 +1,7 @@
 ﻿using MeetingAdministration.Core.Common;
+using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MeetingAdministration.Core.Models
 {
@@ -16,13 +13,13 @@ namespace MeetingAdministration.Core.Models
         public DateTime Date { get; set; }
 
         [Required]
-        public DateTime TimeFrom { get; set; }
+        public TimeSpan TimeFrom { get; set; }
 
         [Required]
-        public DateTime TimeTo { get; set; }
+        public TimeSpan TimeTo { get; set; }
 
         [Required]
-        [Range(1,100)]
+        [Range(1, 100)]
         public int ExpectedPersonsCount { get; set; }
 
         [Required]
@@ -33,7 +30,22 @@ namespace MeetingAdministration.Core.Models
         public bool VideoConference { get; set; } = false;
 
         [Required]
-        [StringLength(200, ErrorMessage = _message, MinimumLength =3)]
+        [StringLength(200, ErrorMessage = _message, MinimumLength = 3)]
         public string Note { get; set; }
+
+        [JsonProperty(Order = -2)]
+        public MeetingCentreModel MeetingCentre { get; set; }
+
+        [JsonProperty(Order = -1)]
+        public MeetingRoomModel MeetingRoom { get; set; }
+
+        public override string ToString()
+        {
+            if (Date != null && Customer != null)
+            {
+                return $"{Customer} : {Date}";
+            }
+            return base.ToString();
+        }
     }
 }

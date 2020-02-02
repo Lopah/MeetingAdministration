@@ -1,10 +1,5 @@
 ﻿using MeetingAdministration.Core.Models;
-using MeetingAdministration.Data.Entities;
-using MeetingAdministrator.App.Commands;
 using MeetingAdministrator.App.ViewModels.Lists;
-using System;
-using System.Collections.ObjectModel;
-using System.Windows.Input;
 
 namespace MeetingAdministrator.App.ViewModels.Details
 {
@@ -14,8 +9,8 @@ namespace MeetingAdministrator.App.ViewModels.Details
 
         public string Title => this.GetType().Name.Remove(this.GetType().Name.Length - 9);
 
-
-        public MeetingRoomModel MeetingRoom {
+        public MeetingRoomModel MeetingRoom
+        {
             get
             {
                 return _meetingRoom;
@@ -42,7 +37,6 @@ namespace MeetingAdministrator.App.ViewModels.Details
             {
                 _meetingRoom = _meetingRoomsListViewModel.ListItems[_meetingRoomsListViewModel.SelectedItemIndex];
             }
-            
         }
     }
 }

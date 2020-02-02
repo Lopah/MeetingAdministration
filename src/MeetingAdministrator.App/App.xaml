@@ -5,6 +5,7 @@
              xmlns:tabcontrols="clr-namespace:MeetingAdministrator.App.ViewModels.TabControls"
              xmlns:tabviews="clr-namespace:MeetingAdministrator.App.Views.Tabs"
              xmlns:tabmodels="clr-namespace:MeetingAdministrator.App.ViewModels.TabControls.Tabs"
+             xmlns:dbcontext="clr-namespace:MeetingAdministration.Data;assembly=MeetingAdministration.Data"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <tabcontrols:TabControlViewModel x:Key="MainTabControl" x:Name="MainTabControl" />

@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:MeetingAdministrator.App.Views.Details"
         mc:Ignorable="d"
         Title="EditEntityWindow" Height="450" Width="800">
-    <StackPanel x:Name="Content">
-        <Label Content="{Binding Name}" FontSize="17"/>
+    <StackPanel>
+    <StackPanel x:Name="ContentPanel">
+        <Label Content="{Binding Name}" FontSize="17" />
+    </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Ok" MinWidth="35" Margin="15 10 0 10" Click="OkButton_Click"/>
+            <Button Content="Close" MinWidth="35" Margin="50 10 0 10" Click="CloseButton_Click"/>
+        </StackPanel>
     </StackPanel>
 </Window>

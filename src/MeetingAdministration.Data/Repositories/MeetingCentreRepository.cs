@@ -19,6 +19,7 @@ namespace MeetingAdministration.Data.Repositories
             _context = context;
             _mapper = mapper;
         }
+
         public async Task<MeetingCentreModel> AddAsync(MeetingCentreModel entity)
         {
             var mapped = _mapper.Map<MeetingCentre>(entity);

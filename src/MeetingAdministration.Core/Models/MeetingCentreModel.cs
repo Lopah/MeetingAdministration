@@ -1,5 +1,4 @@
 ﻿using MeetingAdministration.Core.Common;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
@@ -12,6 +11,7 @@ namespace MeetingAdministration.Core.Models
         {
             MeetingRooms = new ObservableCollection<MeetingRoomModel>();
         }
+
         [Required]
         [StringLength(100, ErrorMessage = "The name of the room cannot exceed 100 characters.", MinimumLength = 3)]
         [Display(Name = "Name of the meeting centre")]
@@ -31,9 +31,8 @@ namespace MeetingAdministration.Core.Models
                 return $"{Code} : {Name}";
             else
                 return base.ToString();
-            
         }
-        
+
         public ICollection<MeetingRoomModel> MeetingRooms { get; set; }
     }
 }

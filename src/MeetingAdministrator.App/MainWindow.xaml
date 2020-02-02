@@ -12,22 +12,21 @@
         mc:Ignorable="d"
         Title="EBC Meeting Rooms Manager" MinWidth="1200" MinHeight="800">
     <Window.Resources>
-        <vm:MainWindowViewModel x:Key="MainViewModel"/>
+        <vm:MainWindowViewModel x:Key="MainViewModel" />
     </Window.Resources>
     <Grid DataContext="{StaticResource MainViewModel}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="11*" />
-
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Menu Height="20" VerticalAlignment="Center" Grid.ColumnSpan="4" >
+        <Menu Height="20" VerticalAlignment="Center" Grid.ColumnSpan="4">
             <MenuItem Header="_File">
                 <MenuItem Header="_Import Data"
                           Command="{Binding ImportCommand}">
@@ -44,7 +43,7 @@
                     </MenuItem.ToolTip>
                 </MenuItem>
                 <Separator />
-                <MenuItem Header="_Exit" 
+                <MenuItem Header="_Exit"
                           Command="{Binding ExitCommand}">
                     <MenuItem.ToolTip>
                         <ToolTip>Exits out of the application.</ToolTip>
@@ -55,7 +54,7 @@
         <TabControl Grid.Row="1" Grid.RowSpan="2" DataContext="{Binding Source={StaticResource MainTabControl}}" Grid.ColumnSpan="4" ItemsSource="{Binding TabCollection}" SelectedItem="{Binding SelectedTab}" SelectedIndex="{Binding SelectedTabIndex}">
             <TabControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding DisplayName}" FontSize="15"/>
+                    <TextBlock Text="{Binding DisplayName}" FontSize="15" />
                 </DataTemplate>
             </TabControl.ItemTemplate>
             <TabControl.ContentTemplate>
@@ -63,7 +62,7 @@
                     <ContentControl x:Name="MainContent"
                                     d:DataContext="{Binding SelectedTab.View}"
                                     Content="{Binding View}"
-                                    DataContextChanged="MainContent_DataContextChanged"/>
+                                    DataContextChanged="MainContent_DataContextChanged" />
                 </DataTemplate>
             </TabControl.ContentTemplate>
         </TabControl>

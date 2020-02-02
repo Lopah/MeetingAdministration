@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
-using MeetingAdministration.Core.Interfaces;
 using MeetingAdministration.Core.Models;
+using MeetingAdministration.Core.Repositories;
 using MeetingAdministration.Data.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MeetingAdministration.Data.Repositories
@@ -21,6 +19,7 @@ namespace MeetingAdministration.Data.Repositories
             _context = context;
             _mapper = mapper;
         }
+
         public async Task<MeetingRoomModel> AddAsync(MeetingRoomModel entity)
         {
             var mapped = _mapper.Map<MeetingRoom>(entity);
@@ -36,7 +35,6 @@ namespace MeetingAdministration.Data.Repositories
             _context.MeetingRooms.Remove(mapped);
             await _context.SaveChangesAsync();
             return entity;
-
         }
 
         public async Task<IList<MeetingRoomModel>> GetAllAsync()

@@ -11,6 +11,5 @@
         public int Amount { get; set; }
 
         public int Min { get; set; }
-
     }
 }

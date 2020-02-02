@@ -1,11 +1,6 @@
-﻿using MeetingAdministration.Data.Repositories;
+﻿using MeetingAdministration.Core.Repositories;
 using MeetingAdministrator.App.Commands;
 using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -21,7 +16,6 @@ namespace MeetingAdministrator.App.ViewModels
 
         public MainWindowViewModel()
         {
-
         }
 
         public ICommand ImportCommand
@@ -34,7 +28,6 @@ namespace MeetingAdministrator.App.ViewModels
                 }
                 return _importCommand;
             }
-            
         }
 
         private void Import()
@@ -60,7 +53,6 @@ namespace MeetingAdministrator.App.ViewModels
                 }
                 return _exitCommand;
             }
-
         }
 
         private void Exit()
@@ -76,7 +68,6 @@ namespace MeetingAdministrator.App.ViewModels
                 // SAVE CHANGES
             }
             Application.Current.Shutdown();
-
         }
 
         public ICommand SaveCommand
@@ -89,7 +80,6 @@ namespace MeetingAdministrator.App.ViewModels
                 }
                 return _saveCommand;
             }
-
         }
 
         private void Save()

@@ -9,6 +9,7 @@ namespace MeetingAdministrator.App.ViewModels.TabControls.Tabs
         {
             View = new AccessoriesView();
         }
+
         public new string DisplayName => this.GetType().Name.Remove(this.GetType().Name.Length - 9);
     }
 }

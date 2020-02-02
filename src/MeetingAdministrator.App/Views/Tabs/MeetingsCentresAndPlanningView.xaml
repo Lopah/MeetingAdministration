@@ -1,8 +1,8 @@
 ﻿<UserControl x:Class="MeetingAdministrator.App.Views.Tabs.MeetingCentresAndPlanningView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:MeetingAdministrator.App.Views.Tabs"
              xmlns:vm="clr-namespace:MeetingAdministrator.App.ViewModels.TabControls.Tabs"
              xmlns:view="clr-namespace:MeetingAdministrator.App.Views.Lists"
@@ -10,7 +10,7 @@
              xmlns:vdetail="clr-namespace:MeetingAdministrator.App.Views.Details"
              xmlns:vmlist="clr-namespace:MeetingAdministrator.App.ViewModels.Lists"
              xmlns:vlist="clr-namespace:MeetingAdministrator.App.Views.Lists"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="900">
     <Grid Background="White" Margin="15 0" Loaded="Grid_Loaded">
         <Grid.RowDefinitions>
@@ -20,18 +20,17 @@
             <RowDefinition Height="4*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="5*" />
-
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <vdetail:MeetingRoomsDetailView Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="15,0" Grid.Column="2" Loaded="MeetingRoomsDetailView_Loaded" x:Name="RoomsDetail"/>
-        <vdetail:MeetingCentresDetailView Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="15,0" Loaded="MeetingCentresDetailView_Loaded" x:Name="CentresDetail"/>
+        <vdetail:MeetingRoomsDetailView Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="15,0" Grid.Column="2" Loaded="MeetingRoomsDetailView_Loaded" x:Name="RoomsDetail" />
+        <vdetail:MeetingCentresDetailView Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="15,0" Loaded="MeetingCentresDetailView_Loaded" x:Name="CentresDetail" />
 
-        <vlist:ListView Grid.Row="3" Grid.ColumnSpan="2" Margin="15,0" DataContext="{Binding MeetingCentresListViewModel}" DataContextChanged="ListView_DataContextChanged" x:Name="CentreList"/>
-        <vlist:ListView Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Margin="15,0" DataContext="{Binding MeetingRoomsListViewModel}" Loaded="ListView_Loaded" x:Name="RoomList"/>
+        <vlist:ListView Grid.Row="3" Grid.ColumnSpan="2" Margin="15,0" DataContext="{Binding MeetingCentresListViewModel}" DataContextChanged="ListView_DataContextChanged" x:Name="CentreList" />
+        <vlist:ListView Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Margin="15,0" DataContext="{Binding MeetingRoomsListViewModel}" Loaded="ListView_Loaded" x:Name="RoomList" />
     </Grid>
 </UserControl>

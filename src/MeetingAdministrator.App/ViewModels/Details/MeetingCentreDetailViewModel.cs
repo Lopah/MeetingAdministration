@@ -1,10 +1,6 @@
 ﻿using MeetingAdministration.Core.Models;
 using MeetingAdministration.Data.Entities;
-using MeetingAdministrator.App.Commands;
 using MeetingAdministrator.App.ViewModels.Lists;
-using System;
-using System.Collections.ObjectModel;
-using System.Windows.Input;
 
 namespace MeetingAdministrator.App.ViewModels.Details
 {
@@ -14,6 +10,7 @@ namespace MeetingAdministrator.App.ViewModels.Details
         private readonly MeetingCentresListViewModel _meetingCentresListViewModel;
 
         public string Title => this.GetType().Name.Remove(this.GetType().Name.Length - 9);
+
         public MeetingCentreModel MeetingCentre
         {
             get { return _meetingCentre; }
@@ -33,9 +30,8 @@ namespace MeetingAdministrator.App.ViewModels.Details
 
         private void ListViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-                if (_meetingCentresListViewModel.SelectedItemIndex >= 0)
-                    MeetingCentre = _meetingCentresListViewModel.ListItems[_meetingCentresListViewModel.SelectedItemIndex];
-            
+            if (_meetingCentresListViewModel.SelectedItemIndex >= 0)
+                MeetingCentre = _meetingCentresListViewModel.ListItems[_meetingCentresListViewModel.SelectedItemIndex];
         }
     }
 }

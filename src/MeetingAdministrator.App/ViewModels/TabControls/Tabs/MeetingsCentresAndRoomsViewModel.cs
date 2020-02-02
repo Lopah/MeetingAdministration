@@ -1,7 +1,6 @@
 ﻿using MeetingAdministrator.App.Common.Intefaces;
 using MeetingAdministrator.App.ViewModels.Details;
 using MeetingAdministrator.App.ViewModels.Lists;
-using MeetingAdministrator.App.Views.Lists;
 using MeetingAdministrator.App.Views.Tabs;
 using System.Windows.Controls;
 
@@ -14,7 +13,6 @@ namespace MeetingAdministrator.App.ViewModels.TabControls.Tabs
         private MeetingCentresListViewModel _meetingCentresListViewModel;
         private MeetingRoomsListViewModel _meetingRoomsListViewModel;
 
-        
         public MeetingsCentresAndRoomsViewModel()
         {
             View = new MeetingCentresAndPlanningView();
@@ -95,6 +93,6 @@ namespace MeetingAdministrator.App.ViewModels.TabControls.Tabs
             }
         }
 
-        public new string DisplayName => this.GetType().Name.Remove(this.GetType().Name.Length-9);
+        public new string DisplayName => this.GetType().Name.Remove(this.GetType().Name.Length - 9);
     }
 }
