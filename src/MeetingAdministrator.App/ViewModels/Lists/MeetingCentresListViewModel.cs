@@ -2,6 +2,7 @@
 using MeetingAdministration.Core.Models;
 using MeetingAdministration.Data.Entities;
 using MeetingAdministrator.App.Commands;
+using MeetingAdministrator.App.Views.Details;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -118,12 +119,16 @@ namespace MeetingAdministrator.App.ViewModels.Lists
 
 		private void ShowNew()
 		{
-
+			var entityWindow = new EditEntityWindow();
+			if (entityWindow.ShowDialog().Value)
+				_selectedItem = entityWindow.DataContext as MeetingCentreModel;
 		}
 
 		private void ShowEdit()
 		{
-
+			var entityWindow = new EditEntityWindow(_selectedItem);
+			if (entityWindow.ShowDialog().Value)
+				_selectedItem = entityWindow.DataContext as MeetingCentreModel;
 		}
 
 		private void Delete()

@@ -21,5 +21,16 @@ namespace MeetingAdministrator.App.Views.Details
         {
             InitializeComponent();
         }
+
+        public EditEntityWindow(object entity)
+        {
+            DataContext = entity;
+            InitializeComponent();
+        }
+
+        public void SetLabelAndTextBoxBasedOnProperty(object property)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -12,11 +12,6 @@
              xmlns:vlist="clr-namespace:MeetingAdministrator.App.Views.Lists"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="900">
-    <UserControl.Resources>
-        <!-- FIXME: This causes a stackoverflow <vm:MeetingsCentresAndRoomsViewModel x:Key="ViewModel"/>-->
-        <!--<vmlist:MeetingCentresListViewModel x:Key="CentresList" />
-        <vmlist:MeetingRoomsListViewModel x:Key="RoomsList" />-->
-    </UserControl.Resources>
     <Grid Background="White" Margin="15 0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -33,14 +28,9 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="15,0" Grid.Column="2">
-            <vdetail:MeetingRoomsDetailView DataContext="{Binding MeetingRoomViewModel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
-        </StackPanel>
-        <StackPanel Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="15,0">
-          <vdetail:MeetingCentresDetailView DataContext="{Binding MeetingCentreViewModel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
-        </StackPanel>
-        <!--FIXME: DEJ DO PICE STACKPANELY-->
-        
+        <vdetail:MeetingRoomsDetailView Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="15,0" Grid.Column="2" DataContext="{Binding MeetingRoomViewModel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+        <vdetail:MeetingCentresDetailView Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="15,0" DataContext="{Binding MeetingCentreViewModel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+
         <vlist:ListView Grid.Row="3" Grid.ColumnSpan="2" Margin="15,0" DataContext="{Binding MeetingCentresListViewModel}" />
         <vlist:ListView Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Margin="15,0" DataContext="{Binding MeetingRoomsListViewModel}" />
     </Grid>

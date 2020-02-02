@@ -8,9 +8,13 @@
         xmlns:listviews="clr-namespace:MeetingAdministrator.App.Views.Lists"
         xmlns:tab="clr-namespace:MeetingAdministrator.App.ViewModels.TabControls"
         xmlns:tabview="clr-namespace:MeetingAdministrator.App.Views.Tabs"
+        xmlns:vm="clr-namespace:MeetingAdministrator.App.ViewModels"
         mc:Ignorable="d"
         Title="EBC Meeting Rooms Manager" MinWidth="1200" MinHeight="800">
-    <Grid>
+    <Window.Resources>
+        <vm:MainWindowViewModel x:Key="MainViewModel"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource MainViewModel}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -25,12 +29,14 @@
         </Grid.ColumnDefinitions>
         <Menu Height="20" VerticalAlignment="Center" Grid.ColumnSpan="4" >
             <MenuItem Header="_File">
-                <MenuItem Header="_Import Data">
+                <MenuItem Header="_Import Data"
+                          Command="{Binding ImportCommand}">
                     <MenuItem.ToolTip>
                         <ToolTip>Import data in TODO format.</ToolTip>
                     </MenuItem.ToolTip>
                 </MenuItem>
-                <MenuItem Header="_Save">
+                <MenuItem Header="_Save"
+                          Command="{Binding SaveCommand}">
                     <MenuItem.ToolTip>
                         <ToolTip>
                             Save data in TODO format.
@@ -39,7 +45,7 @@
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="_Exit" 
-                          Command="{Binding Path=CloseCommand}">
+                          Command="{Binding ExitCommand}">
                     <MenuItem.ToolTip>
                         <ToolTip>Exits out of the application.</ToolTip>
                     </MenuItem.ToolTip>
@@ -55,7 +61,9 @@
             <TabControl.ContentTemplate>
                 <DataTemplate>
                     <ContentControl x:Name="MainContent"
-                                    DataContextChanged="MainContent_DataContextChanged" Content="{Binding View}" d:DataContext="{Binding View}"/>
+                                    d:DataContext="{Binding SelectedTab.View}"
+                                    Content="{Binding View}"
+                                    DataContextChanged="MainContent_DataContextChanged"/>
                 </DataTemplate>
             </TabControl.ContentTemplate>
         </TabControl>
