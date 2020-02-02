@@ -22,7 +22,7 @@ namespace MeetingAdministrator.App.ViewModels.TabControls.Tabs
 
         public MeetingsCentresAndRoomsViewModel(object baseModel)
         {
-            MeetingCentresListViewModel = new MeetingCentresListViewModel();
+            MeetingCentresListViewModel = new MeetingCentresListViewModel(this);
             MeetingRoomsListViewModel = new MeetingRoomsListViewModel(this.MeetingCentresListViewModel);
 
             MeetingCentreViewModel = new MeetingCentreDetailViewModel(this.MeetingCentresListViewModel);

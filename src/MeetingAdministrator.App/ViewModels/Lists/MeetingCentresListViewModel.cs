@@ -2,6 +2,7 @@
 using MeetingAdministration.Core.Models;
 using MeetingAdministration.Data.Entities;
 using MeetingAdministrator.App.Commands;
+using MeetingAdministrator.App.ViewModels.TabControls.Tabs;
 using MeetingAdministrator.App.Views.Details;
 using System;
 using System.Collections.ObjectModel;
@@ -31,7 +32,7 @@ namespace MeetingAdministrator.App.ViewModels.Lists
 			}
 		}
 
-		public MeetingCentresListViewModel()
+		public MeetingCentresListViewModel(MeetingsCentresAndRoomsViewModel meetingsCentresAndRoomsViewModel)
 		{
 			ListItems = new ObservableCollection<MeetingCentreModel>()
 			{
@@ -53,7 +54,16 @@ namespace MeetingAdministrator.App.ViewModels.Lists
 				}
 
 			};
+			_meetingsCentresAndRoomsViewModel = meetingsCentresAndRoomsViewModel;
 		}
+
+		private void ListItems_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+		{
+			SelectedItemIndex = -1;
+			NotifyPropertyChanged(typeof(ObservableCollection<MeetingCentreModel>).Name);
+			_meetingsCentresAndRoomsViewModel.MeetingCentreViewModel.MeetingCentre = null;
+		}
+
 		public MeetingCentreModel SelectedItem
 		{
 			get
@@ -88,6 +98,9 @@ namespace MeetingAdministrator.App.ViewModels.Lists
 				}
 			}
 		}
+
+		private readonly MeetingsCentresAndRoomsViewModel _meetingsCentresAndRoomsViewModel;
+
 		public ICommand NewCommand
 		{
 			get

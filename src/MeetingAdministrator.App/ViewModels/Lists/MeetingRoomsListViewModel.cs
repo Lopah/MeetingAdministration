@@ -32,9 +32,9 @@ namespace MeetingAdministrator.App.ViewModels.Lists
 		private void ListViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
 			if (_meetingCentresListViewModel.SelectedItemIndex >= 0)
-			{
 				SetContextFromCentre(_meetingCentresListViewModel.ListItems[_meetingCentresListViewModel.SelectedItemIndex]);
-			}
+			else
+				SetContextFromCentre(new MeetingCentreModel());
 		}
 
 		private	void SetContextFromCentre(MeetingCentreModel model)
